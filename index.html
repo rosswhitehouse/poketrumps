@@ -8,13 +8,13 @@
     <body ng-app="pokeTrumps">
         <div class="app" ng-controller="trumpsController"  ng-init="drawPlayerCards()">
 
-            <div class="debug">
+            <!-- <div class="debug">
                 <span>Player Cards:</span>
                 <ul><li ng-repeat="card in playerCards">{{ card.name }}</li></ul>
 
                 <span>Computer Cards:</span>
                 <ul><li ng-repeat="card in computerCards">{{ card.name }}</li></ul>
-            </div>
+            </div> -->
 
             <app-card pkmn="playerCards[0]" select-attr="selectAttr" reverse="hidePlayerCard || winner" interactable="turn === 'player'"></app-card>
             
