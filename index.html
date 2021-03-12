@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+        
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body ng-app="pokeTrumps">
+        <div class="app" ng-controller="trumpsController"  ng-init="drawPlayerCards()">
+
+            <div class="debug">
+                <span>Player Cards:</span>
+                <ul><li ng-repeat="card in playerCards">{{ card.name }}</li></ul>
+
+                <span>Computer Cards:</span>
+                <ul><li ng-repeat="card in computerCards">{{ card.name }}</li></ul>
+            </div>
+
+            <app-card pkmn="playerCards[0]" select-attr="selectAttr" reverse="hidePlayerCard || winner" interactable="turn === 'player'"></app-card>
+            
+            <span class="vs">
+                <div class="turnCount" ng-class="turn">
+                    {{ turn }}'s turn
+                </div>
+                <span>VS</span>
+                <button class="resetButton" ng-if="winner" ng-click="resetGame()">retry</button>
+            </span>
+
+            <app-card pkmn="computerCards[0]" reverse="hideComputerCard" interactable="false"></app-card>
+
+            <div class="log">
+                <div ng-repeat="item in log track by $index">{{ item }}</div>
+            </div>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+        <script src="app.js"></script>
+    </body>
+</html>

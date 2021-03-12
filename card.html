@@ -1,0 +1,12 @@
+<div class="card" ng-class="{ reverse: reverse }">
+    <div class="wrap" ng-if="!reverse">
+        <div class="name">{{ pkmn.name | uppercase }}<span class="number">#{{ pkmn.id }}</span></div>
+        <div class="img"><img src="{{ pkmn.img }}" alt="pkmn.name"></div>
+        <ul class="stats">
+            <li ng-repeat="stat in pkmn.stats" ng-click="interactable && selectAttr(stat.label)" ng-class="{ interactable: interactable }">
+                <span>{{ stat.label }}</span>
+                <span>{{ stat.val }}{{ stat.unit }}<span>
+            </li>
+        </ul>
+    </div>
+</div>

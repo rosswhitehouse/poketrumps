@@ -1,0 +1,135 @@
+html {
+    font-size: 62.5%;
+    font-family: 'Roboto', monospace;
+}
+
+* , *:after, *:before {
+    box-sizing: border-box;
+}
+
+body {
+    background: #eee;
+    font-size: 1.6rem;
+}
+
+.app {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.debug {
+    position: fixed;
+    font-size: 1.4rem;
+    bottom: 2rem;
+    left: 2rem;
+    background: lightgray;
+}
+
+.card {
+    border: #FF0000 solid 1rem;
+    border-radius: 1rem;
+    width: 30rem;
+    height: 48.2rem;
+    padding: 1rem;
+    background: white;
+}
+
+.card.reverse {
+    background: white;
+    position: relative;
+}
+
+.card.reverse::before {
+    content: '';
+    height: 50%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-bottom: 2rem solid black;
+    background: #FF0000;
+    box-sizing: content-box;
+}
+
+.card.reverse::after {
+    content: '';
+    height: 6rem;
+    width: 6rem;
+    position: absolute;
+    top: calc(50% + 1rem);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    border: 1rem solid black;
+    border-radius: 100%;
+}
+
+.card .name {
+    font-weight: bold;
+}
+
+.card .number {
+    font-size: 1.2rem;
+}
+
+.card .img {
+    border: solid black 0.5rem;
+    border-radius: 1rem;
+    text-align: center;
+    padding: 1rem;
+}
+
+.card .img img {
+    max-width: 17rem;
+}
+
+.card .stats {
+    margin: 1rem 0;
+    padding: 0 1rem;
+    font-size: 1.8rem;
+}
+
+.card .stats li {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.5rem 0;
+}
+
+.card .stats li.interactable:hover {
+    cursor: pointer;
+    background: #eee;
+}
+
+.vs {
+    font-size: 3rem;
+    text-align: center;
+}
+
+.vs .turnCount {
+    font-size: 2rem;
+}
+
+.vs .player {
+    color: #FF0000;
+}
+
+.vs .computer {
+    color: #3B4CCA;
+}
+
+.vs .resetButton {
+    display: block;
+}
+
+.log {
+    width: 30rem;
+    height: 48.2rem;
+    background: white;
+    border: solid 0.1rem #bbb;
+    border-radius: 1rem;
+    padding: 1rem;
+    overflow: scroll;
+}
